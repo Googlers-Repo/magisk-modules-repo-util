@@ -85,7 +85,7 @@ class Index:
     def get_online_module(self, track, zip_file):
         @Result.catching()
         def get_online_module():
-            local_module = LocalModule.load(zip_file, track)
+            local_module = LocalModule.load(zip_file, track, self._config)
             return OnlineModule.from_dict(local_module)
 
         result = get_online_module()

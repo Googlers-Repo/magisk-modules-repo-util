@@ -147,22 +147,22 @@ options:
 }
 ```
 
-| Key       | Attribute | Description                             |
-| --------- | --------- | --------------------------------------- |
-| id        | required  | Id of Module (_in `module.prop`_)       |
-| enable    | required  | Whether to enable                       |
-| update_to | required  | Follow examples below                   |
-| changelog | optional  | Markdown or Simple Text (**_no HTML_**) |
-| antifeatures  | optional  | Str[]                                   |
-| verified  | optional  | Bool                                    |
-| source    | optional  | Url                                     |
-| max_num   | optional  | Overload `MAX_NUM` in config.json       |
-| readme    | optional  | Str                                     |
+| Key          | Attribute | Description                             |
+| ------------ | --------- | --------------------------------------- |
+| id           | required  | Id of Module (_in `module.prop`_)       |
+| enable       | required  | Whether to enable                       |
+| update_to    | required  | Follow examples below                   |
+| changelog    | optional  | Markdown or Simple Text (**_no HTML_**) |
+| antifeatures | optional  | Str[]                                   |
+| verified     | optional  | Bool                                    |
+| source       | optional  | Url                                     |
+| max_num      | optional  | Overload `MAX_NUM` in config.json       |
+| readme       | optional  | Str                                     |
 
 ## `common/repo.json`
 
 > [!IMPORTANT]
-> This file should be placed in the modules root directory
+> This file can be placed in the modules root directory. If a repo owner has added your module to his repo he can override those fields with the `track.json` file
 
 ```jsonc
 {

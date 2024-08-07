@@ -3,6 +3,7 @@ from enum import Enum
 from .AttrDict import AttrDict
 from .JsonIO import JsonIO
 
+from .ModuleNote import ModuleNote
 
 class TrackJson(AttrDict, JsonIO):
     id: str
@@ -27,6 +28,7 @@ class TrackJson(AttrDict, JsonIO):
     readme: str
     require: list[str]
     antifeatures: list[str]
+    note: ModuleNote
 
     # noinspection PyAttributeOutsideInit
     @property
@@ -65,16 +67,7 @@ class TrackJson(AttrDict, JsonIO):
             homepage=self.homepage or "",
             source=self.source or "",
             support=self.support or "",
-            donate=self.donate or "",
-            verified=self.verified or False,
-            cover=self.cover or "",
-            icon=self.icon or "",
-            screenshots=self.screenshots or [],
-            category=self.category or "",
-            categories=self.categories or [],
-            readme=self.readme or "",
-            require=self.require or [],
-            antifeatures=self.antifeatures or []
+            donate=self.donate or ""
         )
 
     def write(self, file):

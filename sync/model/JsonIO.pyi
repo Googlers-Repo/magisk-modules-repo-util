@@ -1,10 +1,12 @@
 from pathlib import Path
-from typing import Dict
+from typing import Dict, List
 
 
 class JsonIO:
     def write(self: Dict, file: Path): ...
     @classmethod
     def filter(cls, text: str) -> str: ...
+    @classmethod
+    def filterArray(cls, filter: List[str], toFilter: List[str]) -> List[str]: ...
     @classmethod
     def load(cls, file: Path) -> Dict: ...

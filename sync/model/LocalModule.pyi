@@ -4,6 +4,7 @@ from typing import Dict, Type
 from .AttrDict import AttrDict
 from .TrackJson import TrackJson
 
+from ..core.Config import Config
 
 class LocalModule(AttrDict):
     id: str
@@ -37,6 +38,6 @@ class LocalModule(AttrDict):
     verified: bool
 
     @classmethod
-    def load(cls, file: Path, track: TrackJson) -> LocalModule: ...
+    def load(cls, file: Path, track: TrackJson, config: Config) -> LocalModule: ...
     @classmethod
     def expected_fields(cls, __type: bool = ...) -> Dict[str, Type]: ...

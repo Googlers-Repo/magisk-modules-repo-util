@@ -1,7 +1,6 @@
 import json
 import re
 
-
 class JsonIO:
     def write(self, file):
         assert isinstance(self, dict)
@@ -15,6 +14,10 @@ class JsonIO:
     def filter(cls, text):
         return re.sub(r",(?=\s*?[}\]])", "", text)
 
+    @classmethod
+    def filterArray(cls, filter, toFilter):
+        return [i for i in filter if i in toFilter]
+ 
     @classmethod
     def load(cls, file):
         with open(file, encoding="utf-8", mode="r") as f:
