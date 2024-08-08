@@ -55,6 +55,9 @@ class Pull:
             return True
 
         update_json = UpdateJson.load(json_file)
+        if version_code is None:
+          self._log.e(f"_check_version_code: [{module_id}] has no version code set")
+          return False
         if len(update_json.versions) != 0 and version_code > update_json.versions[-1].versionCode:
             return True
 
